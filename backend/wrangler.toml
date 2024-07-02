@@ -2,6 +2,6 @@ name = "backend"
 compatibility_date = "2023-12-01"
 
 [vars]
-DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMjUxM2ZiYmUtNmQ0My00OTFlLWIzNDItYzA4YjYwZjQ2MDUyIiwidGVuYW50X2lkIjoiMDUwNWJjOWY4OTY4MTE0MGRlYTRhMjlkZmQ2NTYzYTBiOWJmMDgzZWQ1Yjg3NjU1OTVjMzg4ZWYxNzk3ZmUyMiIsImludGVybmFsX3NlY3JldCI6IjNjYzA3ZDU0LTM5NmMtNDkyNy1hZmVmLWM0ZGY3NzY0NmQxNCJ9.Vg8_twq3wRx2nrdywR-kZOvEgIPfBoTnd46gDOkONKc"
-JWT_SECRET="werock"
+DATABASE_URL=""
+JWT_SECRET=""
 

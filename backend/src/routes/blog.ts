@@ -96,12 +96,24 @@ blogRouter.put("/", async (c) => {
   });
 });
 
+// TOdo: pagination
 blogRouter.get("/bulk", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
   try {
-    const blogs = await prisma.blog.findMany();
+    const blogs = await prisma.blog.findMany({
+      select: {
+        content: true,
+        title: true,
+        id: true,
+        author: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
 
     return c.json({
       blogs,
@@ -113,24 +125,37 @@ blogRouter.get("/bulk", async (c) => {
     });
   }
 });
-
 blogRouter.get("/:id", async (c) => {
+  const id = c.req.param("id");
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
 
-  const id = await c.req.param("id");
   try {
     const blog = await prisma.blog.findFirst({
       where: {
         id: id,
       },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        author: {
+          select: {
+            name: true,
+          },
+        },
+      },
     });
 
-    return c.json({ blog });
+    return c.json({
+      blog,
+    });
   } catch (e) {
-    c.status(411);
-    return c.json({ message: "error while fetching psot" });
+    c.status(411); // 4
+    return c.json({
+      message: "Error while fetching blog post",
+    });
   }
 });
 
