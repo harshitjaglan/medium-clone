@@ -107,8 +107,3 @@ A lightweight blogging platform built as a fun experiment to explore serverless 
 - **User Roles**: Implement roles and permissions for different user types.
 - **Comments & Likes**: Add commenting and liking features to increase user engagement.
 - **Deployment**: Deploy the application to a live environment using platforms like Vercel or Netlify.
-
-## 📂 Project Structure
-
-medium-like-app/ ├── backend/ │ ├── src/ │ ├── prisma/ │ ├── .env │ ├── package.json │ └── ... ├── frontend/ │ ├── src/ │ ├── public/ │ ├── package.json │ └── ... ├── common/ │ ├── src/ │ ├── package.json │ └── ... ├── README.md └── ...
-
